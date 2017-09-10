@@ -1,5 +1,5 @@
 import React from "react";
-import Grid from './grid/grid'
+import Grid from '../src/grid'
 
 class App extends React.Component {
     render() {
@@ -7,7 +7,7 @@ class App extends React.Component {
             topHeaderValue={['aa9', 'bb', 'cc']}
             leftHeaderValue={['11', '22', '33 ']}
             contentValue={[
-                            ['Dickens', 'Mark'],
+                            ['Dickens', 'Marco'],
                             ['Dickens', 'Mark'],
                             ['Dickens', 'Mark']
                         ]}/>

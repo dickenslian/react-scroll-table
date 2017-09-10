@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import TopHeader from './top_header';
 import LeftHeader from './left_header';
 import GridContent from './grid_content';
-import './grid.scss';
+import './sass/grid.scss';
 
 
 class Grid extends PureComponent {

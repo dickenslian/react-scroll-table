@@ -16,16 +16,16 @@ module.exports = {
     ],
     output: {
         filename: "bundle.js", // the output bundle
-        path: resolve(__dirname, "public"),
+        path: resolve(__dirname, "example"),
         publicPath: "/" // necessary for HMR to know where to load the hot update chunks
     },
 
-    context: resolve(__dirname, "src"),
+    context: resolve(__dirname, "example"),
     devtool: "inline-source-map",
 
     devServer: {
         hot: true, // enable HMR on the server
-        contentBase: resolve(__dirname, "public"), // match the output path
+        contentBase: resolve(__dirname, "example"), // match the output path
         publicPath: "/" // match the output `publicPath`
     },
 
