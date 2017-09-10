@@ -2,14 +2,20 @@ import React, {Component} from 'react';
 
 let GridContent = (props) => {
 
-    let {value, onHorScroll, config = {showText: true}, onCellClick} = props;
+    let {value, onHorScroll, config = {showText: true}, onCellClick, width, height} = props;
     let {showText} = config;
 
     if (Object.prototype.toString.call(value) !== '[object Array]')
         throw new Error('grid content value must be an array');
 
     return (
-        <div className="grid-content" onScroll={onHorScroll} style={{maxWidth: `${85 * value[0].length + 10}px`, maxHeight: `${50 * value.length + 10}px`}}>
+        <div className="grid-content" onScroll={onHorScroll} style={
+                {
+                    maxWidth: `${85 * value[0].length + 10}px`,
+                    maxHeight: `${50 * value.length + 10}px`,
+                    width: !!width ? width : '',
+                    height: !!height ? height : ''
+                }}>
             <div className="content-container">
                 {
                     value.map( (rowItem, index) => {    // value为二维数组，遍历每一行数据

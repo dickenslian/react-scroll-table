@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import cn from 'classnames';
 
 let TopHeader = (props) => {
-    let {value, align = 'center', xMove = 0} = props;
+    let {value, align = 'center', xMove = 0, width, height} = props;
 
     if (Object.prototype.toString.call(value) !== '[object Array]')
         throw new Error('grid top header value must be an array');
@@ -33,20 +33,22 @@ let TopHeader = (props) => {
     value = value.slice(1);   // 从第二个元素往后的元素
 
     return (
-        <div className="top-header">
-            <div className={firstCellCls}><span className="header-title">{firstHeader}</span></div>
+        <div className="top-header" style={{width: !!width ? width : ''}}>
+            <div className={firstCellCls} style={{height: !!height ? height : ''}}>
+                <span className="header-title">{firstHeader}</span>
+            </div>
             <div className="dynamic-block">
                 <div style={{position:'absolute', display:'flex', left:`-${xMove}px`}}>
                     {value.map( (item, index) => {
                         if (align === 'left' && index === value.length - 1) {
                             return (
-                                <div className='header-cell align-left trans' key={index}>
+                                <div className='header-cell align-left trans' key={index} style={{height: !!height ? height : ''}}>
                                     <span className={innerCellCls}>{item}</span>
                                 </div>
                             )
                         }
                         return (
-                                <div className={headerCellCls} key={index}>
+                                <div className={headerCellCls} key={index} style={{height: !!height ? height : ''}}>
                                     <span className={innerCellCls}>{item}</span>
                                 </div>
                             )
